@@ -14,12 +14,16 @@ inside the <p> element with id="t1-msg".
 
 ✅ Task:
 - Select the element with id "t1-msg".
-- Change its text to "Hello, World!".
+- Change its text to "Hello, World!". 
+
+
+
 
 💡 Hint:
 document.getElementById("t1-msg").innerHTML = "Hello, World!";
 */
- 
+    var element = document.getElementById("t1-msg");
+    element.innerHTML= "Hello, World!";
 
 /*  
 =======================================
