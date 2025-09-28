@@ -77,8 +77,8 @@ data.content   // the quote text
 data.author    // the author
 */
  var button3 = document.getElementById("t3-loadQuote");
- var author = "None";
- var quote = "None";
+ var author ;
+ var quote ;
  var quoteText = document.getElementById("t3-quote");
  var authorText = document.getElementById("t3-author");
  
@@ -88,19 +88,22 @@ data.author    // the author
 
             if (!res.ok) throw new Error("HTTP" + res.status);
             const data = await res.json();
-
+            return data;    
         }
         catch (err){
-                
+                console.log("Error");
         }
+        
 
 
  }
 
- button3.addEventListener("click", function(){
+
+ button3.addEventListener("click", async function(){
+    const data = await loadQuote();
     
-    quoteText.innerHTML = quote;
-    authorText.innerHTML =author;
+    quoteText.innerHTML = data.quote;
+    authorText.innerHTML =data.author;
  })
 
 /*  
